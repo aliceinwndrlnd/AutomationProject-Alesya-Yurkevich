@@ -1,7 +1,4 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -9,6 +6,9 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Task_5 {
     WebDriver driver = null;
@@ -89,8 +89,31 @@ public class Task_5 {
         Assert.assertEquals(driver.findElement(By.id("l_trash")).getText(), "55 шт.");
     }
 
+    @Test
+    public void googletest1() throws InterruptedException {
+        driver.get("https://www.google.com/");
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).sendKeys("Hello world",Keys.ENTER);
+        WebElement element1 = driver.findElement(By.className("action-menu"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",element1);
+        Thread.sleep(2000);
+        Actions act = new Actions(driver);
+        WebElement element2 = driver.findElement(By.id("bottomads"));
+        act.moveToElement(element2).click(element2).build().perform();
+    }
+
+    @Test
+    public void googletest2() {
+        driver.get("https://www.google.com/");
+        driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).sendKeys("//",Keys.ENTER);
+        List<String> textList1 = new ArrayList<>();
+        driver.findElements(By.xpath("//*[@id=\"topstuff\"]/div/div/p[1]")).forEach(data -> textList1.add(data.getText()));
+        Assert.assertTrue(textList1.contains("По запросу // ничего не найдено. "));
+
+    }
+
+
     @AfterTest
     public void postconditions() {
-        driver.quit();
+        //driver.quit();
     }
 }
