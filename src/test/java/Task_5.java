@@ -94,7 +94,7 @@ public class Task_5 {
         driver.get("https://www.google.com/");
         driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).sendKeys("Hello world",Keys.ENTER);
         Actions act = new Actions(driver);
-        WebElement element = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[9]/div/div/div[2]/div[1]"));
+        WebElement element = driver.findElement(By.xpath("(//*[@id='rso']//a/h3)[9]"));
         act.moveToElement(element).click(element).build().perform();
     }
 
