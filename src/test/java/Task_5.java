@@ -92,7 +92,7 @@ public class Task_5 {
     @Test
     public void googletest1() {
         driver.get("https://www.google.com/");
-        driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).sendKeys("Hello world",Keys.ENTER);
+        driver.findElement(By.xpath("(/html/body/div//form/div//input)[1]")).sendKeys("Hello world",Keys.ENTER);
         Actions act = new Actions(driver);
         WebElement element = driver.findElement(By.xpath("(//*[@id='rso']//a/h3)[9]"));
         act.moveToElement(element).click(element).build().perform();
@@ -101,9 +101,9 @@ public class Task_5 {
     @Test
     public void googletest2() {
         driver.get("https://www.google.com/");
-        driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).sendKeys("//",Keys.ENTER);
+        driver.findElement(By.xpath("(/html/body/div//form/div//input)[1]")).sendKeys("//",Keys.ENTER);
         List<String> textList1 = new ArrayList<>();
-        driver.findElements(By.xpath("//*[@id=\"topstuff\"]/div/div/p[1]")).forEach(data -> textList1.add(data.getText()));
+        driver.findElements(By.xpath("(//*[@id=\"topstuff\"]/div//p)[1]")).forEach(data -> textList1.add(data.getText()));
         Assert.assertTrue(textList1.contains("По запросу // ничего не найдено. "));
 
     }
