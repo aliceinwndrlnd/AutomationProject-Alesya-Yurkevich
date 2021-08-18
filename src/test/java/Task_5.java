@@ -90,15 +90,12 @@ public class Task_5 {
     }
 
     @Test
-    public void googletest1() throws InterruptedException {
+    public void googletest1() {
         driver.get("https://www.google.com/");
         driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")).sendKeys("Hello world",Keys.ENTER);
-        WebElement element1 = driver.findElement(By.className("action-menu"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",element1);
-        Thread.sleep(2000);
         Actions act = new Actions(driver);
-        WebElement element2 = driver.findElement(By.id("bottomads"));
-        act.moveToElement(element2).click(element2).build().perform();
+        WebElement element = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[9]/div/div/div[2]/div[1]"));
+        act.moveToElement(element).click(element).build().perform();
     }
 
     @Test
