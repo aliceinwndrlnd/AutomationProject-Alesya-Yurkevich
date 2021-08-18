@@ -111,6 +111,6 @@ public class Task_5 {
 
     @AfterTest
     public void postconditions() {
-        //driver.quit();
+        driver.quit();
     }
 }
