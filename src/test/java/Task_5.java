@@ -23,15 +23,15 @@ public class Task_5 {
     public void parameterscheck1() {
         driver.get("https://masterskayapola.ru/kalkulyator/laminata.html");
         driver.findElement(By.name("calc_roomwidth")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "8", Keys.ENTER);
-        driver.findElement(By.name("calc_roomheight")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"9",Keys.ENTER);
-        driver.findElement(By.name("calc_lamwidth")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"2000",Keys.ENTER);
-        driver.findElement(By.name("calc_lamheight")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"400",Keys.ENTER);
-        driver.findElement(By.name("calc_inpack")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"34",Keys.ENTER);
-        driver.findElement(By.name("calc_price")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"1500",Keys.ENTER);
+        driver.findElement(By.name("calc_roomheight")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "9", Keys.ENTER);
+        driver.findElement(By.name("calc_lamwidth")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "2000", Keys.ENTER);
+        driver.findElement(By.name("calc_lamheight")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "400", Keys.ENTER);
+        driver.findElement(By.name("calc_inpack")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "34", Keys.ENTER);
+        driver.findElement(By.name("calc_price")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "1500", Keys.ENTER);
         Select select = new Select(driver.findElement(By.name("calc_direct")));
         select.selectByIndex(0);
-        driver.findElement(By.name("calc_bias")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"300",Keys.ENTER);
-        driver.findElement(By.name("calc_walldist")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"5",Keys.ENTER);
+        driver.findElement(By.name("calc_bias")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "300", Keys.ENTER);
+        driver.findElement(By.name("calc_walldist")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "5", Keys.ENTER);
         WebElement calkBtn = driver.findElement(By.xpath("//*[@class='btn btn-secondary btn-lg tocalc']"));
         calkBtn.click();
         Assert.assertEquals(driver.findElement(By.id("s_lam")).getText(), "71.83 м2.");
@@ -46,15 +46,15 @@ public class Task_5 {
     public void parameterscheck2() {
         driver.get("https://masterskayapola.ru/kalkulyator/laminata.html");
         driver.findElement(By.name("calc_roomwidth")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "15", Keys.ENTER);
-        driver.findElement(By.name("calc_roomheight")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"10",Keys.ENTER);
-        driver.findElement(By.name("calc_lamwidth")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"2000",Keys.ENTER);
-        driver.findElement(By.name("calc_lamheight")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"300",Keys.ENTER);
-        driver.findElement(By.name("calc_inpack")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"20",Keys.ENTER);
-        driver.findElement(By.name("calc_price")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"3800",Keys.ENTER);
+        driver.findElement(By.name("calc_roomheight")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "10", Keys.ENTER);
+        driver.findElement(By.name("calc_lamwidth")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "2000", Keys.ENTER);
+        driver.findElement(By.name("calc_lamheight")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "300", Keys.ENTER);
+        driver.findElement(By.name("calc_inpack")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "20", Keys.ENTER);
+        driver.findElement(By.name("calc_price")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "3800", Keys.ENTER);
         Select select = new Select(driver.findElement(By.name("calc_direct")));
         select.selectByIndex(1);
-        driver.findElement(By.name("calc_bias")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"100",Keys.ENTER);
-        driver.findElement(By.name("calc_walldist")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),"10",Keys.ENTER);
+        driver.findElement(By.name("calc_bias")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "100", Keys.ENTER);
+        driver.findElement(By.name("calc_walldist")).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE), "10", Keys.ENTER);
         WebElement calkBtn = driver.findElement(By.xpath("//*[@class='btn btn-secondary btn-lg tocalc']"));
         calkBtn.click();
         Assert.assertEquals(driver.findElement(By.id("s_lam")).getText(), "149.50 м2.");
@@ -92,7 +92,7 @@ public class Task_5 {
     @Test
     public void googletest1() {
         driver.get("https://www.google.com/");
-        driver.findElement(By.xpath("(/html/body/div//form/div//input)[1]")).sendKeys("Hello world",Keys.ENTER);
+        driver.findElement(By.xpath("(/html/body/div//form/div//input)[1]")).sendKeys("Hello world", Keys.ENTER);
         Actions act = new Actions(driver);
         WebElement element = driver.findElement(By.xpath("(//*[@id='rso']//a/h3)[9]"));
         act.moveToElement(element).click(element).build().perform();
@@ -101,13 +101,12 @@ public class Task_5 {
     @Test
     public void googletest2() {
         driver.get("https://www.google.com/");
-        driver.findElement(By.xpath("(/html/body/div//form/div//input)[1]")).sendKeys("//",Keys.ENTER);
+        driver.findElement(By.xpath("(/html/body/div//form/div//input)[1]")).sendKeys("//", Keys.ENTER);
         List<String> textList1 = new ArrayList<>();
         driver.findElements(By.xpath("(//*[@id=\"topstuff\"]/div//p)[1]")).forEach(data -> textList1.add(data.getText()));
         Assert.assertTrue(textList1.contains("По запросу // ничего не найдено. "));
 
     }
-
 
 
     @AfterTest
