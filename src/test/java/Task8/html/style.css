@@ -10,6 +10,7 @@ p {
     font-size: 160%;
 }
 table, th, td {
+    border:1px solid black;
     color: chocolate;
     font-size: 120%;
 }
