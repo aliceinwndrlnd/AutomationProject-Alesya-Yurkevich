@@ -1,0 +1,31 @@
+body {
+    background-color: lavender;
+}
+#title {
+    color: saddlebrown;
+    font-size: 260%;
+}
+p {
+    color: olive;
+    font-size: 160%;
+}
+table, th, td {
+    color: chocolate;
+    font-size: 120%;
+}
+h2 {
+    display: block;
+    font-size: 120%;
+}
+#mails {
+    font-size: 120%;
+}
+#checkbox {
+    font-size: 120%;
+}
+#equipment {
+    font-size: 120%;
+}
+a {
+    font-size: 120%;
+}
