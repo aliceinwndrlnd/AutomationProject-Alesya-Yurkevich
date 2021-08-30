@@ -58,7 +58,6 @@ import org.testng.annotations.Test;
 
         }
 
-
         @AfterTest
         public void postconditions() {
             driver.quit();
