@@ -54,7 +54,6 @@ public class Task_6 {
         Actions act = new Actions(driver);
         act.moveToElement(driver.findElement(By.partialLinkText("Linked")));
         act.moveToElement(driver.findElement(By.linkText("Twitter"))).click(driver.findElement(By.linkText("Twitter"))).build().perform();
-        Thread.sleep(2000);
 
     }
 
