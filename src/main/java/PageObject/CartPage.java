@@ -27,5 +27,4 @@ public class CartPage extends BasePage{
         isDisplayed(products);
         return this;
     }
-
 }

@@ -29,9 +29,14 @@ public class BasePage {
 
     protected void isDisplayed(By... elements) {
         for (By element : elements) {
-            Assert.assertTrue(getDriver().findElement(element).isDisplayed(), "Element :: " + elements + " is not exist.");
+            Assert.assertTrue(getDriver().findElements(element).size() > 0, "Element :: " + elements + " is not exist.");
         }
     }
-
-
+    protected void pause(){
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

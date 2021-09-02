@@ -23,5 +23,8 @@ public class ProductPage extends BasePage {
         click(cartBtn);
         return this;
     }
-
+    public ProductPage sleep () {
+        pause();
+        return this;
+    }
 }
