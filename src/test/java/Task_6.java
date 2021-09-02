@@ -19,7 +19,7 @@ public class Task_6 {
     }
 
     @Test
-    public void test1() {
+    public void testLog() {
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("secret_sauce");
@@ -34,7 +34,7 @@ public class Task_6 {
     }
 
     @Test
-    public void test2() {
+    public void moveTo() {
         driver.get("https://www.saucedemo.com/");
         Actions act = new Actions(driver);
         WebElement element = driver.findElement(By.cssSelector(".login_password"));
@@ -44,7 +44,7 @@ public class Task_6 {
     }
 
     @Test
-    public void test3() throws InterruptedException {
+    public void moving() throws InterruptedException {
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.cssSelector("#user-name")).sendKeys("standard_user");
         driver.findElement(By.cssSelector("#password")).sendKeys("secret_sauce");
@@ -82,7 +82,7 @@ public class Task_6 {
     }
 
     @Test
-    public void test3() throws InterruptedException {
+    public void test3() {
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.cssSelector("#user-name")).sendKeys("standard_user");
         driver.findElement(By.cssSelector("#password")).sendKeys("secret_sauce");
