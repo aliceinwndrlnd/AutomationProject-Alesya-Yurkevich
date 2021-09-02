@@ -54,7 +54,7 @@ public class Task_6 {
         act.moveToElement(driver.findElement(By.partialLinkText("Linked")));
         act.moveToElement(driver.findElement(By.linkText("Twitter"))).click(driver.findElement(By.linkText("Twitter"))).build().perform();
         Thread.sleep(2000);
-    }g
+    }
 
     @AfterTest
     public void postconditions() {
