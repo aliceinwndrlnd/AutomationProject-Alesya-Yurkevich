@@ -36,6 +36,4 @@ public class LoginPage extends BasePage {
         Assert.assertEquals(getElementText(errorTxt), expectedText);
         return this;
     }
-
-
 }

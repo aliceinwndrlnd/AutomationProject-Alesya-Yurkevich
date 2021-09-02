@@ -19,5 +19,8 @@ public class MenuPage extends BasePage {
         isDisplayed(allItems, about, logout, resetApp);
         return this;
     }
-
+    public MenuPage sleep () {
+        pause();
+        return this;
+    }
 }
