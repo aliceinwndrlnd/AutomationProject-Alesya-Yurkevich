@@ -34,13 +34,15 @@ public class Task_6 {
     }
 
     @Test
-    public void test2() {
+    public void test2 () {
         driver.get("https://www.saucedemo.com/");
         Actions act = new Actions(driver);
         WebElement element = driver.findElement(By.cssSelector(".login_password"));
         act.moveToElement(element).perform();
         Assert.assertEquals(driver.findElement(By.xpath("//div[2]/h4")).getText(), "Password for all users:");
         Assert.assertEquals(driver.findElement(By.tagName("h4")).getText(), "Accepted usernames are:");
+        Assert.assertEquals(driver.findElement(By.xpath("//div[2]/h4")).getText(),"Password for all users:");
+        Assert.assertEquals(driver.findElement(By.tagName("h4")).getText(),"Accepted usernames are:");
     }
 
     @Test
@@ -50,6 +52,8 @@ public class Task_6 {
         driver.findElement(By.cssSelector("#password")).sendKeys("secret_sauce");
         driver.findElement(By.xpath("//*[@id=\"login-button\"]")).click();
         Assert.assertEquals(driver.findElement(By.name("add-to-cart-sauce-labs-backpack")).getText(), "ADD TO CART");
+        driver.findElement(By.xpath("//*[@id='login-button']")).click();
+        Assert.assertEquals(driver.findElement(By.name("add-to-cart-sauce-labs-backpack")).getText(),"ADD TO CART");
         Actions act = new Actions(driver);
         act.moveToElement(driver.findElement(By.partialLinkText("Linked")));
         act.moveToElement(driver.findElement(By.linkText("Twitter"))).click(driver.findElement(By.linkText("Twitter"))).build().perform();
@@ -58,6 +62,7 @@ public class Task_6 {
 
     @AfterTest
     public void postconditions() {
+
         driver.quit();
     }
 }
