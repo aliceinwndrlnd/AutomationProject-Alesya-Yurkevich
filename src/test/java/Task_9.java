@@ -46,23 +46,22 @@ public class Task_9 extends BaseTest {
     }
 
     @Test(priority = 4)
-    public void testMenu() throws InterruptedException {
-        Thread.sleep(2000);
-        menuPage.clickMenu()
+    public void testMenu() {
+        menuPage.sleep()
+                .clickMenu()
                 .display();
     }
 
     @Test(priority = 5)
-    public void testProductPage() throws InterruptedException {
-        Thread.sleep(2000);
-        productPage.displayProductPage()
+    public void testProductPage() {
+        productPage.sleep()
+                .displayProductPage()
                 .addToCartBtn()
                 .clickToCartBtn();
     }
 
     @Test(priority = 6)
-    public void addToCart() throws InterruptedException {
-        Thread.sleep(2000);
+    public void addToCart() {
         cartPage.compareTitle("YOUR CART")
                 .poductDisplay()
                 .btnChecking();//remove, continue
