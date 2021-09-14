@@ -1,35 +1,48 @@
 package PageObject;
 
+import driver.DriverCreation;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import static driver.DriverCreation.getDriver;
+
 
 public class BasePage {
+    protected WebDriver driver;
+    protected WebDriverWait wait;
+    protected Actions actions;
+
+    protected BasePage(WebDriver driver) {
+        this.driver = driver;
+        wait = new WebDriverWait(DriverCreation.getDriver(), 5);
+        actions = new Actions(DriverCreation.getDriver());
+    }
 
     protected void enter(By element, CharSequence... charSequences) {
-        getDriver().findElement(element).clear();
-        getDriver().findElement(element).sendKeys(charSequences);
+        driver.findElement(element).clear();
+        driver.findElement(element).sendKeys(charSequences);
     }
 
     protected void click(By element) {
 
-        getDriver().findElement(element).click();
+        driver.findElement(element).click();
     }
 
     protected void open(String url) {
 
-        getDriver().get(url);
+        driver.get(url);
     }
 
     protected String getElementText(By element) {
 
-        return getDriver().findElement(element).getText();
+        return driver.findElement(element).getText();
     }
 
     protected void isDisplayed(By... elements) {
         for (By element : elements) {
-            Assert.assertTrue(getDriver().findElements(element).size() > 0, "Element :: " + elements + " is not exist.");
+            Assert.assertTrue(driver.findElements(element).size() > 0, "Element :: " + elements + " is not exist.");
         }
     }
     protected void pause(){
