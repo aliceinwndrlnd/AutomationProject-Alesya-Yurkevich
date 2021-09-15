@@ -2,6 +2,8 @@ package Task_10;
 
 import PageObject.*;
 import driver.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -19,6 +21,7 @@ public class Task_10_1 extends BaseTest {
 
 
     @DataProvider
+    @Description("data for tests about login")
     public Object[][] dataProvider() {
         return new Object[][]{
                 {"standard_user","secret_sauce",""},//positive
@@ -28,7 +31,10 @@ public class Task_10_1 extends BaseTest {
                 {"locked_out_user","secret_sauce","Epic sadface: Sorry, this user has been locked out."},
         };
     }
+
         @Test(dataProvider = "dataProvider")
+        @Link("https://www.saucedemo.com")
+        @Description("checking login page")
         public void loginApp(String username, String passsword, String errorText) {
             loginPage.openPage()
                     .enterUsername(username)

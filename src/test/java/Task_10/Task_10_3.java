@@ -4,6 +4,8 @@ import static PageObject.ProductPage.FilterVar.*;
 
 import PageObject.*;
 import driver.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -22,6 +24,8 @@ public class Task_10_3 extends BaseTest {
 
 
     @Parameters({"username", "password"})
+    @Description("sorting of products")
+    @Link("https://www.saucedemo.com/inventory")
     @Test
     public void sortTest(@Optional("standard_user") String username, @Optional("secret_sauce") String password) {
         loginPage.openPage()

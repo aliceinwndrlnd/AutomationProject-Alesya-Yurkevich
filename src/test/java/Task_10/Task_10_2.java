@@ -2,6 +2,8 @@ package Task_10;
 
 import PageObject.*;
 import driver.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -21,6 +23,8 @@ public class Task_10_2 extends BaseTest {
         }
 
     @Parameters({"username","password"})
+    @Link("https://www.saucedemo.com/cart")
+    @Description("adding and removing items from the cart")
     @Test(invocationCount = 3)
     public void addAndRemove(@Optional("standard_user") String username, @Optional("secret_sauce") String password) {
         loginPage.openPage()
