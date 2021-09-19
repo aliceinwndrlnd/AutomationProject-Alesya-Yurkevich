@@ -12,14 +12,13 @@ public class Task_9 extends BaseTest {
 
     @BeforeClass
     public void precondition() {
-        loginPage = new LoginPage();
-        productPage = new ProductPage();
-        cartPage = new CartPage();
-        checkoutPage = new CheckoutPage();
-        menuPage = new MenuPage();
+        loginPage = new LoginPage(driver);
+        productPage = new ProductPage(driver);
+        cartPage = new CartPage(driver);
+        checkoutPage = new CheckoutPage(driver);
+        menuPage = new MenuPage(driver);
         loginPage.openPage();
     }
-
     @Test(priority = 1)
     public void loginApp() {     //Fluent / Chain of Invocations
         loginPage.openPage()
