@@ -20,8 +20,8 @@ public class HomePageObject extends BasePage {
         super(driver);
     }
 
-    public HomePageObject open(){
-        open("http://the-internet.herokuapp.com/");
+    public HomePageObject openPage() {
+        open();
         return this;
     }
 
