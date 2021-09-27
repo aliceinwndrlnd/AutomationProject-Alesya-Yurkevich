@@ -1,10 +1,11 @@
-package PageObject;
+package PageObject.saucedemo;
 
+import PageObject.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class CartPage extends BasePage{
+public class CartPage extends BasePage {
     private By removebtn = By.id("remove-sauce-labs-backpack");
     private By continuebtn = By.id("continue-shopping");
     private By checkoutBtn = By.id("checkout");

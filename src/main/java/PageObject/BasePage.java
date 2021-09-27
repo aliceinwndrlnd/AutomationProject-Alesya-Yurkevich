@@ -16,8 +16,8 @@ public class BasePage {
 
     protected BasePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(DriverCreation.getDriver(), 5);
-        actions = new Actions(DriverCreation.getDriver());
+        this.wait = new WebDriverWait(driver, 5);
+        this.actions = new Actions(driver);
     }
 
     protected void enter(By element, CharSequence... charSequences) {
@@ -42,10 +42,12 @@ public class BasePage {
 
     protected void isDisplayed(By... elements) {
         for (By element : elements) {
-            Assert.assertTrue(driver.findElements(element).size() > 0, "Element :: " + elements + " is not exist.");
+            System.out.println("Verify element :: " + element);
+            Assert.assertFalse(driver.findElements(element).isEmpty(), "Element :: " + elements + " is not exist.");
         }
     }
-    protected void pause(){
+
+    public void pause(){
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
