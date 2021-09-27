@@ -15,7 +15,7 @@ public class HomePage_Test extends BaseTest {
 
     @Test
     public void verifyHomePageObject_Test (){
-        homePageObject.open().verifyHomePage();
+        homePageObject.openPage().verifyHomePage();
     }
 
 }
