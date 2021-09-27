@@ -1,4 +1,4 @@
-package driver;
+package testNg;
 
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
@@ -41,6 +41,7 @@ public class Listener implements ITestListener {
 
     @Attachment(value = "Screenshots", type = "image/png")
     private byte[] saveScreenshots(byte[] s) {
+
         return s;
     }
 
