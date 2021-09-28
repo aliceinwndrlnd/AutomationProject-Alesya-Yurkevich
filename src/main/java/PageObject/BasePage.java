@@ -18,9 +18,9 @@ public class BasePage {
 
     protected BasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 5);
-        this.actions = new Actions(driver);
-        this.properties = PropertyReader.getProperties();
+        wait = new WebDriverWait(driver, 5);
+        actions = new Actions(driver);
+        properties = PropertyReader.getProperties();
     }
 
     protected void enter(By element, CharSequence... charSequences) {
