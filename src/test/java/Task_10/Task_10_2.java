@@ -1,6 +1,8 @@
 package Task_10;
 
-import PageObject.*;
+import PageObject.saucedemo.CartPage;
+import PageObject.saucedemo.LoginPage;
+import PageObject.saucedemo.ProductPage;
 import driver.BaseTest;
 import io.qameta.allure.Description;
 import io.qameta.allure.Link;

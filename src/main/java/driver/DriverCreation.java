@@ -3,10 +3,11 @@ package driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 import java.util.concurrent.TimeUnit;
 /*
-    Patten Singleton
- */
+  Patten Singleton
+*/
 
 public class DriverCreation {
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();

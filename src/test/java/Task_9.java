@@ -1,4 +1,4 @@
-import PageObject.*;
+import PageObject.saucedemo.*;
 import driver.BaseTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
