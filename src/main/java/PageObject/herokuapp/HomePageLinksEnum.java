@@ -3,7 +3,8 @@ package PageObject.herokuapp;
 public enum HomePageLinksEnum {
     CONTEXT_MENU("Context Menu"),
     DYNAMIC_CONTROLS("Dynamic Controls"),
-    FILE_UPLOADER("File Upload");
+    FILE_UPLOADER("File Upload"),
+    FRAMES("Frames");
 
     String link;
 
