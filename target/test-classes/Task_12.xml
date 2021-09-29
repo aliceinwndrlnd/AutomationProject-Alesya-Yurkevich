@@ -16,10 +16,17 @@
         </classes>
     </test>
 
-    <test name="File Uploader">
+    <test name="File Uploader" enabled="false">
         <classes>
             <class name="Task_12.HomePage_Test"/>
             <class name="Task_12.FileUploader_Test"/>
+        </classes>
+    </test>
+
+    <test name="Frames">
+        <classes>
+            <class name="Task_12.HomePage_Test"/>
+            <class name="Task_12.Frames_Test"/>
         </classes>
     </test>
 
