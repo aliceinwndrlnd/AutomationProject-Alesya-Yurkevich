@@ -21,8 +21,9 @@ public class FileUploader_Test extends BaseTest {
     @Test
     public void fileUploader_Test() {
         fileUploaderObject.verifyPageTitle("File Uploader")
-                .uploadFile()
-                .verifyUploading("imagee.jpg")
-                .verifyPageTitle("File Uploaded!");
+                .dragAndDropUpload("imagee.jpg"); //если роботом действия воспроизводим,то так. Если без него, то без .dragAndDropUpload
+                //.uploadFile()
+                //.verifyUploading("imagee.jpg")
+                //.verifyPageTitle("File Uploaded!");
     }
 }
