@@ -2,7 +2,8 @@ package PageObject.herokuapp;
 
 public enum HomePageLinksEnum {
     CONTEXT_MENU("Context Menu"),
-    DYNAMIC_CONTROLS("Dynamic Controls");
+    DYNAMIC_CONTROLS("Dynamic Controls"),
+    FILE_UPLOADER("File Upload");
 
     String link;
 
