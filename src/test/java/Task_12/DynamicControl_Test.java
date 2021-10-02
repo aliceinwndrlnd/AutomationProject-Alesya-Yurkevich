@@ -19,7 +19,7 @@ public class DynamicControl_Test extends BaseTest {
     }
 
     @Test
-    public void dynamicControlsObject_Test() {
+    public void dynamicControlsObject_Test() {  //Fluent / Chain of Invocation
         dynamicControlsObject.verifyPageTitle()
                 .clickRemoveBtn()
                 .verifyElements("It's gone!")
