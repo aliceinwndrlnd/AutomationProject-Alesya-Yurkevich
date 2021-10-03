@@ -1,5 +1,6 @@
 package PageObject.saucedemo;
 
+import Builder.UserBuilder;
 import PageObject.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,6 +31,13 @@ public class LoginPage extends BasePage {
 
     public LoginPage enterPassword(String password) {
         enter(this.password, password);
+        return this;
+    }
+
+    public LoginPage loginApp(UserBuilder userBuilder) {
+        enterUsername(userBuilder.getUsername());
+        enterPassword(userBuilder.getPassword());
+        clickLogin();
         return this;
     }
 

@@ -15,14 +15,15 @@ public class Task_10ForUserBuilder extends BaseTest {
         loginPage.openPage();
     }
 
+    UserBuilder userBuilder = new UserBuilder
+            .Builder()
+            .withUsername("standard_user")
+            .withPassword("secret_sauce")
+            .build();
+
     @Test
     public void forBuilderTest() {
-        UserBuilder userBuilder = new UserBuilder
-                .Builder()
-                .withUsername("standard_user")
-                .withPassword("secret_sauce")
-                .build();
-
+        loginPage.loginApp(userBuilder);
     }
 
 }
