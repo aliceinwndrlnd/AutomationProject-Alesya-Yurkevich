@@ -1,5 +1,6 @@
 package Task_10;
 
+import Builder.UserBuilder;
 import PageObject.saucedemo.CartPage;
 import PageObject.saucedemo.LoginPage;
 import PageObject.saucedemo.ProductPage;
@@ -15,6 +16,7 @@ public class Task_10_2 extends BaseTest {
     LoginPage loginPage;
     ProductPage productPage;
     CartPage cartPage;
+    UserBuilder userBuilder;
 
 
     @BeforeClass
@@ -22,17 +24,17 @@ public class Task_10_2 extends BaseTest {
         loginPage = new LoginPage(driver);
         productPage = new ProductPage(driver);
         cartPage = new CartPage(driver);
+        userBuilder = new UserBuilder.Builder().withUsername("standard_user").withPassword("secret_sauce").build();
         }
+
 
     @Parameters({"username","password"})
     @Link("https://www.saucedemo.com/cart")
     @Description("adding and removing items from the cart")
     @Test(invocationCount = 3)
-    public void addAndRemove(@Optional("standard_user") String username, @Optional("secret_sauce") String password) {
+    public void addAndRemove() {
         loginPage.openPage()
-                .enterUsername(username)
-                .enterPassword(password)
-                .clickLogin();
+                .loginApp(userBuilder);
         productPage.addToCartBtn()
                 .clickToCartBtn();
         cartPage.btnChecking();

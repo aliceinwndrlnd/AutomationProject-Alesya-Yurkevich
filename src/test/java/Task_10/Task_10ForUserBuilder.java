@@ -25,5 +25,4 @@ public class Task_10ForUserBuilder extends BaseTest {
     public void forBuilderTest() {
         loginPage.loginApp(userBuilder);
     }
-
 }
