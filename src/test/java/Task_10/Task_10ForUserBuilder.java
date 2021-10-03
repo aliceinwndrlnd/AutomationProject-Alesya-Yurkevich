@@ -17,8 +17,12 @@ public class Task_10ForUserBuilder extends BaseTest {
 
     @Test
     public void forBuilderTest() {
-        UserBuilder userBuilder = new UserBuilder.Builder().withUsername("standard_user").withPassword("secret_sauce").build();
-        System.out.println(userBuilder.toString());
+        UserBuilder userBuilder = new UserBuilder
+                .Builder()
+                .withUsername("standard_user")
+                .withPassword("secret_sauce")
+                .build();
+
     }
 
 }
