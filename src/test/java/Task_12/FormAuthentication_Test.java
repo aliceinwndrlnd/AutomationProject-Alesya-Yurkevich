@@ -12,18 +12,16 @@ import org.testng.annotations.Test;
 public class FormAuthentication_Test extends BaseTest {  //Builder
     HomePageObject homePageObject;
     FormAuthenticationObject formAuthenticationObject;
+    UserBuilder userBuilder;
 
     @BeforeClass
     public void precondition (){
         homePageObject = new HomePageObject(driver);
         formAuthenticationObject = new FormAuthenticationObject(driver);
         homePageObject.clickLink(HomePageLinksEnum.FORM_AUTHENTICATION);
+        userBuilder = new UserBuilder.Builder().withUsername("tomsmith").withPassword("SuperSecretPassword!").build();
     }
 
-    UserBuilder userBuilder = new UserBuilder.Builder()
-            .withUsername("tomsmith")
-            .withPassword("SuperSecretPassword!")
-            .build();
 
     @Test
     public void formAuthentication_Test() {
