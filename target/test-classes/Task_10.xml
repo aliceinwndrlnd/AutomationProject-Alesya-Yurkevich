@@ -10,4 +10,12 @@
             </class>
         </classes>
     </test>
+
+    <test name="Builder test">
+        <classes>
+            <class name="Task_10.Task_10_1"/>
+            <class name="Task_10.Task_10ForUserBuilder"/>
+        </classes>
+    </test>
+
 </suite>
