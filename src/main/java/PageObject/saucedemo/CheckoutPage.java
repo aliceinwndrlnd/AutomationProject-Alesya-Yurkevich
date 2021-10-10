@@ -2,7 +2,6 @@ package PageObject.saucedemo;
 
 import PageObject.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class CheckoutPage extends BasePage {
 
@@ -12,9 +11,6 @@ public class CheckoutPage extends BasePage {
     private By continueBtn = By.id("continue");
     private By finishBtn = By.id("finish");
 
-    public CheckoutPage(WebDriver driver) {
-        super(driver);
-    }
 
     public CheckoutPage enterData(String firstname, String lastname, String zip) {
         enter(this.firstName, firstname);

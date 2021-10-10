@@ -12,13 +12,14 @@ public class Task_10ForUserBuilder extends BaseTest {
 
     @BeforeClass
     public void precondition() {
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
         loginPage.openPage();
         userBuilder = new UserBuilder.Builder().withUsername("standard_user").withPassword("secret_sauce").build();
     }
 
     @Test
     public void forBuilderTest() {
+
         loginPage.loginApp(userBuilder);
     }
 }

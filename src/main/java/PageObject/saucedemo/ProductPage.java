@@ -3,7 +3,6 @@ package PageObject.saucedemo;
 
 import PageObject.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import java.util.Collections;
@@ -24,10 +23,6 @@ public class ProductPage extends BasePage {
     private By HiToLoPrice = By.cssSelector("[value=hilo]");
 
 
-    public ProductPage(WebDriver driver) {
-        super(driver);
-    }
-
     public ProductPage displayProductPage() {
         isDisplayed(icon, filter, cartBtn);
         return this;
@@ -44,7 +39,7 @@ public class ProductPage extends BasePage {
     }
 
     public ProductPage sleep() {
-        pause();
+        pause(2);
         return this;
     }
 
