@@ -15,9 +15,9 @@ public class Task_10_1 extends BaseTest {
 
     @BeforeClass
     public void precondition() {
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
         loginPage.openPage();
-        productPage = new ProductPage(driver);
+        productPage = new ProductPage();
     }
 
 

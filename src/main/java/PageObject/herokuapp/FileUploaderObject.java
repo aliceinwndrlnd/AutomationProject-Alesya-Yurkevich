@@ -2,7 +2,6 @@ package PageObject.herokuapp;
 
 import PageObject.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -19,9 +18,6 @@ public class FileUploaderObject extends BasePage {
     private By uploadFileName = By.xpath("//*[@id='drag-drop-upload']//*[@class='dz-filename']//span");
 
 
-    public FileUploaderObject(WebDriver driver) {
-        super(driver);
-    }
 
     public FileUploaderObject verifyPageTitle(String title){
         Assert.assertEquals(getElementText(this.title), title);
@@ -41,7 +37,7 @@ public class FileUploaderObject extends BasePage {
 
     public FileUploaderObject dragAndDropUpload(String imgName) {
         click(dragAndDropUpload);
-        pause();
+        pause(2);
         StringSelection stringSelection = new StringSelection(userDir+ "\\files\\" + imgName);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null); //мы описали объект с помощью StringSelection выше
@@ -56,7 +52,7 @@ public class FileUploaderObject extends BasePage {
         } catch (Exception e) {
             e.printStackTrace();  // робот всегда описывается try and catch (e.printStackTrace - распечатывает,что словил)
         }
-        pause();
+        pause(2);
         Assert.assertEquals(getElementText(uploadFileName), imgName);
         return this;
     }

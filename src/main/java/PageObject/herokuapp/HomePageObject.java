@@ -2,7 +2,6 @@ package PageObject.herokuapp;
 
 import PageObject.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class HomePageObject extends BasePage {
 
@@ -12,12 +11,6 @@ public class HomePageObject extends BasePage {
     private By getLink(HomePageLinksEnum homePageLinksEnum){
 
         return By.linkText(homePageLinksEnum.getLinkText());
-    }
-
-
-    public HomePageObject(WebDriver driver) {
-
-        super(driver);
     }
 
     public HomePageObject openPage() {

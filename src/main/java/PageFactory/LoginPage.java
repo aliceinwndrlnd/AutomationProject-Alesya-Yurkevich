@@ -19,7 +19,6 @@ public class LoginPage extends BasePage {
     WebElement loginBtn;
 
     public LoginPage(WebDriver driver) {
-        super(driver);
         PageFactory.initElements(driver, LoginPage.class);
     }
 

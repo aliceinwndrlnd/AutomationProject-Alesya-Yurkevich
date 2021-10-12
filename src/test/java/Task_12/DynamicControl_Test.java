@@ -13,8 +13,8 @@ public class DynamicControl_Test extends BaseTest {
 
     @BeforeClass
     public void precondition (){
-        homePageObject = new HomePageObject(driver);
-        dynamicControlsObject = new DynamicControlsObject(driver);
+        homePageObject = new HomePageObject();
+        dynamicControlsObject = new DynamicControlsObject();
         homePageObject.clickLink(HomePageLinksEnum.DYNAMIC_CONTROLS);
     }
 

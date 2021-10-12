@@ -3,18 +3,12 @@ package PageObject.herokuapp;
 import PageObject.BasePage;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class ContextMenuObject extends BasePage {
     private By title = By.tagName("h3");
     private By hotSpot = By.id("hot-spot");
 
-
-    public ContextMenuObject(WebDriver driver) {
-
-        super(driver);
-    }
 
     public ContextMenuObject verifyPageTitle (){
         Assert.assertEquals(getElementText(title), HomePageLinksEnum.CONTEXT_MENU.getLinkText());

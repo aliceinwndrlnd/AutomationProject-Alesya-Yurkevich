@@ -1,17 +1,12 @@
 package Builder;
 
+import lombok.Getter;
+
 //Builder
+@Getter
 public class UserBuilder {
     String username;
     String password;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
 
     public static class Builder {
 

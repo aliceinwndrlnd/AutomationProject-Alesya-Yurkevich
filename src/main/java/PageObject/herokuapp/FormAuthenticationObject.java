@@ -3,7 +3,6 @@ package PageObject.herokuapp;
 import Builder.UserBuilder;
 import PageObject.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class FormAuthenticationObject extends BasePage {
@@ -12,10 +11,6 @@ public class FormAuthenticationObject extends BasePage {
     private By loginBtn = By.cssSelector(".radius>i");
     private By afterLoginText = By.tagName("h4");
 
-
-    public FormAuthenticationObject(WebDriver driver) {
-        super(driver);
-    }
 
     public FormAuthenticationObject loginApp(UserBuilder userBuilder) { //Builder
         enter(username, userBuilder.getUsername()); //Value object

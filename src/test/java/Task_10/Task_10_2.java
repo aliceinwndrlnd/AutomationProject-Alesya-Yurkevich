@@ -8,7 +8,6 @@ import driver.BaseTest;
 import io.qameta.allure.Description;
 import io.qameta.allure.Link;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -21,9 +20,9 @@ public class Task_10_2 extends BaseTest {
 
     @BeforeClass
     public void precondition() {
-        loginPage = new LoginPage(driver);
-        productPage = new ProductPage(driver);
-        cartPage = new CartPage(driver);
+        loginPage = new LoginPage();
+        productPage = new ProductPage();
+        cartPage = new CartPage();
         userBuilder = new UserBuilder.Builder().withUsername("standard_user").withPassword("secret_sauce").build();
         }
 

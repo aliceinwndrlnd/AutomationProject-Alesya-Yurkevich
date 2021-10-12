@@ -1,5 +1,7 @@
 package PageObject;
 
+import driver.DriverCreation;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -9,53 +11,57 @@ import properties.PropertyReader;
 
 import java.util.Properties;
 
-
+@Log4j2
 public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected Actions actions;
     protected Properties properties;
 
-    protected BasePage(WebDriver driver) {
-        this.driver = driver;
+    protected BasePage() {
+        this.driver = DriverCreation.getDriver();
         wait = new WebDriverWait(driver, 5);
         actions = new Actions(driver);
         properties = PropertyReader.getProperties();
     }
 
     protected void enter(By element, CharSequence... charSequences) {
+        log.info("Enter in element :: " + element);
         driver.findElement(element).clear();
         driver.findElement(element).sendKeys(charSequences);
     }
 
     protected void click(By element) {
-
+        log.info("Click on element :: " + element);
         driver.findElement(element).click();
     }
 
     protected void open() {
-        driver.get(properties.getProperty("url"));
+        open(properties.getProperty("url"));
     }
 
     protected void open(String url) {
+        log.info("Open element :: " + url);
         driver.get(url);
     }
 
     protected String getElementText(By element) {
-
+        log.info("Find element :: " + element);
         return driver.findElement(element).getText();
     }
 
     protected void isDisplayed(By... elements) {
         for (By element : elements) {
-            System.out.println("Verify element :: " + element);
+            log.info("Verify that element :: " + element + " is displayed.");
             Assert.assertFalse(driver.findElements(element).isEmpty(), "Element :: " + elements + " is not exist.");
         }
     }
 
-    public void pause(){
+    public void pause(Integer seconds) {
         try {
-            Thread.sleep(2000);
+            long time = seconds*1000;
+            log.info("Sleep :: " + time);
+            Thread.sleep(time);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
